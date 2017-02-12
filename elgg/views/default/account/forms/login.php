@@ -10,6 +10,12 @@
 
 global $CONFIG;
 
+global $FB_LOGIN;
+global $GOOGLE_LOGIN;
+
+$FB_LOGIN = false;
+$GOOGLE_LOGIN = false;
+
 $form_body = "<p class=\"loginbox\"><label>" . elgg_echo('username') . "<br />" . elgg_view('input/text', array('internalname' => 'username', 'class' => 'login-textarea')) . "</label>";
 $form_body .= "<br />";
 $form_body .= "<label>" . elgg_echo('password') . "<br />" . elgg_view('input/password', array('internalname' => 'password', 'class' => 'login-textarea')) . "</label><br />";

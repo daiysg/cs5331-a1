@@ -1,5 +1,13 @@
 <?php
 
+if ($GOOGLE_LOGIN == false) {
+    $re=array(
+        'success'=>false,
+    );
+    die(json_encode($re));
+}
+
+
 require_once(dirname(__FILE__) . "/engine/start.php");
 
 $json = file_get_contents('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token='.$_POST['idToken']);
@@ -7,6 +15,7 @@ $json = file_get_contents('https://www.googleapis.com/oauth2/v3/tokeninfo?id_tok
 $json_object = json_decode($json,true);
 
 if($json_object['email']!=""){
+
 
     $user = get_user_by_username(md5($json_object['email']));
     if ($user) {

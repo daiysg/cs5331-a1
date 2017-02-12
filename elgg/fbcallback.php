@@ -1,5 +1,13 @@
 <?php
 
+if ($FB_LOGIN == false) {
+    $re=array(
+        'success'=>false,
+    );
+    die(json_encode($re));
+}
+
+
 require_once(dirname(__FILE__) . "/engine/start.php");
 
 $json = file_get_contents('https://graph.facebook.com/v2.5/me?access_token='.$_POST['idToken']);

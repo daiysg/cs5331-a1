@@ -23,7 +23,10 @@ class ControllerAccountLogout extends Controller {
 			unset($this->session->data['reward']);			
 			unset($this->session->data['voucher']);
 			unset($this->session->data['vouchers']);
-			
+
+			$FB_LOGIN = false;
+            $GOOGLE_LOGIN = false;
+
       		$this->redirect($this->url->link('account/logout', '', 'SSL'));
     	}
  
