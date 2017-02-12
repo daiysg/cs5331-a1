@@ -14,12 +14,15 @@ $form_body = "<p class=\"loginbox\"><label>" . elgg_echo('username') . "<br />" 
 $form_body .= "<br />";
 $form_body .= "<label>" . elgg_echo('password') . "<br />" . elgg_view('input/password', array('internalname' => 'password', 'class' => 'login-textarea')) . "</label><br />";
 
-$form_body .= elgg_view('login/extend');
-
 $form_body .= elgg_view('input/submit', array('value' => elgg_echo('login'))) . " <div id=\"persistent_login\"><label><input type=\"checkbox\" name=\"persistent\" value=\"true\" />".elgg_echo('user:persistent')."</label></div></p>";
 $form_body .= "<p class=\"loginbox\">";
 $form_body .= (!isset($CONFIG->disable_registration) || !($CONFIG->disable_registration)) ? "<a href=\"{$vars['url']}pg/register/\">" . elgg_echo('register') . "</a> | " : "";
-$form_body .= "<a href=\"{$vars['url']}account/forgotten_password.php\">" . elgg_echo('user:password:lost') . "</a></p>";
+$form_body .= "<a href=\"{$vars['url']}account/forgotten_password.php\">" . elgg_echo('user:password:lost') . "</a>";
+
+$form_body .= elgg_view('login/extend');
+$form_body .= elgg_view('login/fbextend');
+$form_body .= "</p>";
+
 
 $login_url = $vars['url'];
 if ((isset($CONFIG->https_login)) && ($CONFIG->https_login)) {
@@ -36,3 +39,8 @@ if ((isset($CONFIG->https_login)) && ($CONFIG->https_login)) {
 <script type="text/javascript">
 	$(document).ready(function() { $('input[name=username]').focus(); });
 </script>
+
+<?php
+  //echo elgg_view('login/extend');
+  //echo elgg_view('login/fbextend');
+?>
