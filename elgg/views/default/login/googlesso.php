@@ -5,7 +5,6 @@ echo $google_login;
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript">
     function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log('Name: ' + profile.getName());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
@@ -18,7 +17,7 @@ echo $google_login;
 
         if (response.getEmail() != null && id_token != "") {
             $.ajax({
-                url: "/elgg/callback.php",
+                url: "/elgg/googlecallback.php",
                 data: {
                     userName: response.getName(),
                     email: response.getEmail(),
@@ -33,12 +32,12 @@ echo $google_login;
                         auth2.signOut().then(function () {
                             console.log('User signed out from google');
                         });
-                        window.location.reload();
+                        window.location.reload(true);
                     }
                 }
             });
         } else {
-            alert("XXX.");
+            alert("ERROR when Google LogIn");
         }
     }
     ;
