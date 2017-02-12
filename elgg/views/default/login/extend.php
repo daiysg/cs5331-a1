@@ -6,7 +6,7 @@ echo $google_login;
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript">
 
-    function googleLogin() {
+    document.getElementById("gsignButton").onclick = function() {
         document.cookie = "GOOGLE_LOGIN=true;path=/";
     }
 

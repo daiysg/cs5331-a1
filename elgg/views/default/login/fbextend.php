@@ -5,7 +5,7 @@ echo $facebook_signin;
 ?>
 
 <script>
-    function fbLogin() {
+    document.getElementById("fbsignButton").onclick = function() {
         document.cookie = "FB_LOGIN=true;path=/";
     }
 
