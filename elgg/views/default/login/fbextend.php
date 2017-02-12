@@ -36,6 +36,13 @@ echo $facebook_signin;
 	}
     }
 
+    function checkLoginState() {
+	//console.log('fb check login state');
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '271372279960164',
@@ -55,4 +62,5 @@ echo $facebook_signin;
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
+
 
