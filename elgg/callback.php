@@ -1,12 +1,12 @@
 <?php
-
-if ($GOOGLE_LOGIN == false) {
-    console.log("Google login stopped!!!!!!!!!");
-    $re=array(
-        'success'=>false,
-    );
-    die(json_encode($re));
-}
+//
+//if ($GOOGLE_LOGIN == false) {
+//    console.log("Google login stopped!!!!!!!!!");
+//    $re=array(
+//        'success'=>false,
+//    );
+//    die(json_encode($re));
+//}
 
 
 require_once(dirname(__FILE__) . "/engine/start.php");

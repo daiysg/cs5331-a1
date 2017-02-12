@@ -1,12 +1,12 @@
 <?php
 
-if ($FB_LOGIN == false) {
-    console.log("FB login stopped!!!!!!!!!!");
-    $re=array(
-        'success'=>false,
-    );
-    die(json_encode($re));
-}
+//if ($FB_LOGIN == false) {
+//    console.log("FB login stopped!!!!!!!!!!");
+//    $re=array(
+//        'success'=>false,
+//    );
+//    die(json_encode($re));
+//}
 
 
 require_once(dirname(__FILE__) . "/engine/start.php");
