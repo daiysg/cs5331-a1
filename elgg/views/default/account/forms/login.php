@@ -20,7 +20,7 @@ $form_body .= (!isset($CONFIG->disable_registration) || !($CONFIG->disable_regis
 $form_body .= "<a href=\"{$vars['url']}account/forgotten_password.php\">" . elgg_echo('user:password:lost') . "</a>";
 
 $form_body .= elgg_view('login/extend');
-$form_body .= elgg_view('login/fbextend');
+//$form_body .= elgg_view('login/fbextend');
 $form_body .= "</p>";
 
 
