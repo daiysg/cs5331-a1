@@ -1,5 +1,5 @@
 <?php
-$facebook_signin = '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" ></fb:login-button>';
+$facebook_signin = '<button><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" ></fb:login-button></button>';
 $facebook_signin .= '<div id="status"></div>';
 echo $facebook_signin;
 ?>
