@@ -2,7 +2,6 @@
 
 if (isset($_COOKIE["GOOGLE_LOGIN"])) {
     $google_login = $_COOKIE["GOOGLE_LOGIN"];
-
     if ($google_login == "false") {
         console.log("FB login stopped!!!!!!!!!!");
         $re = array(
@@ -16,9 +15,7 @@ if (isset($_COOKIE["GOOGLE_LOGIN"])) {
 require_once(dirname(__FILE__) . "/engine/start.php");
 
 $json = file_get_contents('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token='.$_POST['idToken']);
-
 $json_object = json_decode($json,true);
-
 if($json_object['email']!=""){
 
 
