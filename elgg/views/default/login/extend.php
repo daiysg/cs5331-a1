@@ -16,32 +16,33 @@ echo $google_login;
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
 
-        if(response.getEmail()!=null && id_token!=""){
+        if (response.getEmail() != null && id_token != "") {
             $.ajax({
-                url:"/elgg/callback.php",
-                data:{
-                    userName:response.getName(),
-                    email:response.getEmail(),
-                    idToken:id_token,
-                    userType:'2'
+                url: "/elgg/callback.php",
+                data: {
+                    userName: response.getName(),
+                    email: response.getEmail(),
+                    idToken: id_token,
+                    userType: '2'
                 },
-                dataType:"json",
-                type:"post",
-                success:function(data){
-//                    if(data.success == true){
-//                        var auth2 = gapi.auth2.getAuthInstance();
-//                        auth2.signOut().then(function () {
-//                            console.log('User signed out from google');
-//                        });
-//                        window.location.reload(true);
-//                    }
+                dataType: "json",
+                type: "post",
+                success: function (data) {
+                    if (data.success == true) {
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        auth2.signOut().then(function () {
+                            console.log('User signed out from google');
+                        });
+                        window.location.reload();
+                    }
                 }
             });
-        }else{
+        } else {
             alert("XXX.");
         }
-    };
-    $(document).ready(function() {
+    }
+    ;
+    $(document).ready(function () {
         $("head").append('<meta name="google-signin-scope" content="profile email">');
         $("head").append('<meta name="google-signin-client_id" content="423648320802-i04pigmqtclahsf9m672l2cblafh0o9h.apps.googleusercontent.com">');
     });
