@@ -460,6 +460,8 @@ function logout() {
 	session_init(NULL, NULL, NULL);
 	$_SESSION['msg'] = $old_msg;
 
+
+
 	return TRUE;
 }
 
