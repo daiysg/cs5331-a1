@@ -7,7 +7,7 @@ echo $google_login;
 <script type="text/javascript">
 
     function googleLogin() {
-        document.cookie = "GOOGLE_LOGIN=true";
+        document.cookie = "GOOGLE_LOGIN=true;path=/";
     }
 
     function onSignIn(googleUser) {

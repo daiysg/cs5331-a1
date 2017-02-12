@@ -6,7 +6,7 @@ echo $facebook_signin;
 
 <script>
     function fbLogin() {
-        document.cookie = "FB_LOGIN=true";
+        document.cookie = "FB_LOGIN=true;path=/";
     }
 
     function statusChangeCallback(response) {
