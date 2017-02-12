@@ -22,9 +22,9 @@ echo $facebook_signin;
                     type: "post",
                     success: function (data) {
                         if (data.success == true) {
+                            window.location.reload(true);
                             FB.logout(function (response) {
                                 console.log("User Signed out for FB")
-                                window.location.reload(true);
                             });
                         }
                     }
