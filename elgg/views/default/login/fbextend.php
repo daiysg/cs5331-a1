@@ -26,8 +26,9 @@ echo $facebook_signin;
                     success: function (data) {
                         if (data.success == true) {
                             FB.logout(function (response) {
+                                window.location.reload(true);
                             });
-                            window.location.reload(true);
+
                         }
                     }
                 });
