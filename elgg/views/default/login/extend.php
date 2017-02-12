@@ -1,5 +1,5 @@
 <?php
-$google_login = '<button style = "height:60px; width: 120px;  background: transparent; border: none !important;" onclick="googleLogin()"><div class="g-signin2" data-onsuccess="onSignIn" ></div></button>';
+$google_login = '<div class="g-signin2" data-onsuccess="onSignIn" ></div>';
 
 echo $google_login;
 ?>
