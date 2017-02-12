@@ -23,8 +23,9 @@ echo $facebook_signin;
                     success: function (data) {
                         if (data.success == true) {
                             FB.logout(function (response) {
+                                console.log("User Signed out for FB")
+                                window.location.reload(true);
                             });
-                            window.location.reload();
                         }
                     }
                 });
@@ -34,7 +35,6 @@ echo $facebook_signin;
     }
 
     function checkLoginState() {
-        //console.log('fb check login state');
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
@@ -46,9 +46,6 @@ echo $facebook_signin;
             xfbml: true,
             version: 'v2.5'
         });
-        //FB.getLoginStatus(function(response) {
-        //statusChangeCallback(response);
-        //});
     };
 
     (function (d, s, id) {
