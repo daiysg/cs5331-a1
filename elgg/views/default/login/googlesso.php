@@ -28,11 +28,11 @@ echo $google_login;
                 type: "post",
                 success: function (data) {
                     if (data.success == true) {
-                        window.location.reload(true);
                         var auth2 = gapi.auth2.getAuthInstance();
                         auth2.signOut().then(function () {
                             console.log('User signed out from google');
                         });
+                        window.location.reload(true);
                     }
                 }
             });
