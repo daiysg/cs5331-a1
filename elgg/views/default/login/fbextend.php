@@ -1,10 +1,14 @@
 <?php
-$facebook_signin = '<button style = "height:60px; width: 120px;  background: transparent; border: none !important;"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" ></fb:login-button></button>';
+$facebook_signin = '<button style = "height:60px; width: 120px;  background: transparent; border: none !important;" onclick="fbLogin()" ><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" ></fb:login-button></button>';
 $facebook_signin .= '<div id="status"></div>';
 echo $facebook_signin;
 ?>
 
 <script>
+    function fbLogin() {
+        document.cookie = "FB_LOGIN=true";
+    }
+
     function statusChangeCallback(response) {
         //console.log('statusChangeCallback: status - ' + response.status);
 

@@ -1,12 +1,16 @@
 <?php
-//
-//if ($GOOGLE_LOGIN == false) {
-//    console.log("Google login stopped!!!!!!!!!");
-//    $re=array(
-//        'success'=>false,
-//    );
-//    die(json_encode($re));
-//}
+
+if (isset($_COOKIE["GOOGLE_LOGIN"])) {
+    $google_login = $_COOKIE["GOOGLE_LOGIN"];
+
+    if ($google_login == "false") {
+        console.log("FB login stopped!!!!!!!!!!");
+        $re = array(
+            'success' => false,
+        );
+        die(json_encode($re));
+    }
+}
 
 
 require_once(dirname(__FILE__) . "/engine/start.php");

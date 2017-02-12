@@ -24,8 +24,9 @@ class ControllerAccountLogout extends Controller {
 			unset($this->session->data['voucher']);
 			unset($this->session->data['vouchers']);
 
-			$FB_LOGIN = false;
-            $GOOGLE_LOGIN = false;
+            setcookie("FB_LOGIN", "false", time() + (86400 * 30), "/");
+            setcookie("GOOGLE_LOGIN", "false", time() + (86400 * 30), "/");
+
             console.log("STOPPED FB AND GOOGLE LOGIN!!!!!!");
 
       		$this->redirect($this->url->link('account/logout', '', 'SSL'));

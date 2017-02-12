@@ -1,10 +1,15 @@
 <?php
-$google_login = '<button style = "height:60px; width: 120px;  background: transparent; border: none !important;"><div class="g-signin2" data-onsuccess="onSignIn" ></div></button>';
+$google_login = '<button style = "height:60px; width: 120px;  background: transparent; border: none !important;" onclick="googleLogin()"><div class="g-signin2" data-onsuccess="onSignIn" ></div></button>';
 
 echo $google_login;
 ?>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript">
+
+    function googleLogin() {
+        document.cookie = "GOOGLE_LOGIN=true";
+    }
+
     function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
