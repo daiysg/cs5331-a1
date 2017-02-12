@@ -45,7 +45,7 @@ echo $facebook_signin;
 
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '1668503193402206',
+            appId      : '271372279960164',
             xfbml      : true,
             version    : 'v2.5'
         });
