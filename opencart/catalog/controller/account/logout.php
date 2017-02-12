@@ -26,6 +26,7 @@ class ControllerAccountLogout extends Controller {
 
 			$FB_LOGIN = false;
             $GOOGLE_LOGIN = false;
+            console.log("STOPPED FB AND GOOGLE LOGIN!!!!!!");
 
       		$this->redirect($this->url->link('account/logout', '', 'SSL'));
     	}

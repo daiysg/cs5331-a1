@@ -1,6 +1,7 @@
 <?php
 
 if ($FB_LOGIN == false) {
+    console.log("FB login stopped!!!!!!!!!!");
     $re=array(
         'success'=>false,
     );

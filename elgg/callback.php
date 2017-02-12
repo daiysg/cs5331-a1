@@ -1,6 +1,7 @@
 <?php
 
 if ($GOOGLE_LOGIN == false) {
+    console.log("Google login stopped!!!!!!!!!");
     $re=array(
         'success'=>false,
     );
