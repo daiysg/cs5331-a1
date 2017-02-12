@@ -21,6 +21,7 @@ $form_body .= "<a href=\"{$vars['url']}account/forgotten_password.php\">" . elgg
 
 $form_body .= elgg_view('login/extend');
 $form_body .= elgg_view('login/fbextend');
+
 $form_body .= "</p>";
 
 
