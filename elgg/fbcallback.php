@@ -4,7 +4,7 @@ if (isset($_COOKIE["FB_LOGIN"])) {
     $fb_login = $_COOKIE["FB_LOGIN"];
 
     if ($fb_login == "false") {
-        console . log("FB login stopped!!!!!!!!!!");
+        console.log("FB login stopped!!!!!!!!!!");
         $re = array(
             'success' => false,
         );

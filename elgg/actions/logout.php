@@ -8,6 +8,10 @@
  * @link http://elgg.org/
  */
 
+setcookie("FB_LOGIN", "false", time() + (86400 * 30), "/");
+setcookie("GOOGLE_LOGIN", "false", time() + (86400 * 30), "/");
+echo "STOPPED FB AND GOOGLE LOGIN!!!!!!" ;
+
 // Log out
 $result = logout();
 
