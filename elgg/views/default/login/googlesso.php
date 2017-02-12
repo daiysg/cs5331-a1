@@ -17,7 +17,7 @@ echo $google_login;
 
         if (response.getEmail() != null && id_token != "") {
             $.ajax({
-                url: "/elgg/callback.php",
+                url: "/elgg/googlecallback.php",
                 data: {
                     userName: response.getName(),
                     email: response.getEmail(),
