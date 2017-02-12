@@ -14,7 +14,7 @@ echo $facebook_signin;
 
             FB.api('/me', function(response) {
                 //console.log("function me: ");
-                //console.log(response);
+	        //console.log(response);
                 $.ajax({
                     url:"/elgg/fbcallback.php",
                     data:{
@@ -25,22 +25,15 @@ echo $facebook_signin;
                     type:"post",
                     success:function(data){
                         if(data.success == true){
-                            FB.logout(function(response) {
-                            });
+			    FB.logout(function(response) {
+			    });
                             window.location.reload(true);
                         }
                     }
-                });
+                 });
             });
         } else {
-        }
-    }
-
-    function checkLoginState() {
-        //console.log('fb check login state');
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
+	}
     }
 
     window.fbAsyncInit = function() {
@@ -50,7 +43,7 @@ echo $facebook_signin;
             version    : 'v2.5'
         });
         //FB.getLoginStatus(function(response) {
-        //statusChangeCallback(response);
+          //statusChangeCallback(response);
         //});
     };
 
@@ -62,5 +55,4 @@ echo $facebook_signin;
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-
 
