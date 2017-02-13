@@ -5,12 +5,11 @@ echo $facebook_signin;
 ?>
 
 <script>
-    document.getElementById("fbsignButton").onclick = function() {
+    document.getElementById("fbsignButton").onclick = function () {
         document.cookie = "FB_LOGIN=true;path=/";
     }
 
     function statusChangeCallback(response) {
-        //console.log('statusChangeCallback: status - ' + response.status);
 
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
@@ -53,9 +52,6 @@ echo $facebook_signin;
             xfbml: true,
             version: 'v2.5'
         });
-        //FB.getLoginStatus(function(response) {
-        //statusChangeCallback(response);
-        //});
     };
 
     (function (d, s, id) {
